@@ -1,32 +1,51 @@
 <template>
   <div id="app">
-    
-    <h1 id="demo"></h1>
-    
+    <Navbar></Navbar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
+import Navbar from "./components/Navbar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    
-  }
-}
-
-
-
+    Navbar,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
 }
 </style>

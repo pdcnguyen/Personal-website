@@ -1,22 +1,28 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import VueRouter from "vue-router";
+import { routes } from "./routes";
 
-Vue.config.productionTip = false
+
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  mode: "history",
+  routes,
+});
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: "#app",
+  router,
+  render: (h) => h(App),
+});
 
-var i = 0;
-var txt = 'Lorem ipsum dummy text blabla.';
-var speed = 50;
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
 
-typeWriter();
+
+
+
+
