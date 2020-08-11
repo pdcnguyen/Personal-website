@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="hero section">
+    <section class="panel">
+      <div class="hero">
         <div class="background">
           <div class="background_right">
             <transition name="image-start">
@@ -31,7 +31,10 @@
           </transition>
         </div>
       </div>
-      <div class="intro section">
+    </section>
+
+    <section class="panel">
+      <div class="intro">
         <div class="background">
           <div class="background_right">
             <div class="background_right_content">
@@ -107,7 +110,11 @@
           </div>
         </div>
       </div>
-    </full-page>
+    </section>
+
+    <section class="panel">
+
+    </section>
   </div>
 </template>
 
@@ -145,9 +152,11 @@ export default {
 $primary-color: #ffdb45;
 .home {
   max-width: 192rem;
+  width: 100%;
+  height: 100vh;
 }
 .hero {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 .background {
@@ -238,17 +247,16 @@ $primary-color: #ffdb45;
     margin-bottom: 5rem;
   }
   &_player {
-        width: 100%;
-        display: flex;
+    width: 100%;
+    display: flex;
     &_spotify {
       height: 40rem;
       width: 45%;
     }
 
-
     &_text {
       margin-top: 5rem;
-      padding-right: 5rem ;
+      padding-right: 5rem;
       font-size: 4rem;
       width: 50%;
     }

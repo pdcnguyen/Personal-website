@@ -21,7 +21,8 @@ export default {
   z-index: 100;
   font-size: 2rem;
   height: 5rem;
-  width: 100vw;
+  //max-width: 192rem;
+  max-width: 100%;
   position: fixed;
   font-family: "Open Sans";
   margin-top: 5rem;
