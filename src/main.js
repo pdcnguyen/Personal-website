@@ -2,6 +2,13 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
 import { routes } from "./routes";
+import VueFullPage from 'vue-fullpage.js';
+
+
+if(screen.width > 1024){
+  Vue.use(VueFullPage);
+
+}
 
 Vue.use(VueRouter);
 
@@ -17,5 +24,4 @@ new Vue({
   router,
   render: (h) => h(App),
 });
-
 

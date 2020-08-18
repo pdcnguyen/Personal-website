@@ -7,22 +7,17 @@
 </template>
 
 <script>
-
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
     Navbar,
-    Footer,
   },
 };
 </script>
 
 <style lang="scss">
-
-
 * {
   margin: 0;
   padding: 0;
@@ -34,10 +29,7 @@ export default {
   box-sizing: inherit;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -52,11 +44,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  
 }
-
-
-
-
-
-
 </style>

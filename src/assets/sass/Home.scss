@@ -1,0 +1,878 @@
+$primary-color: #ffdb45;
+$screen1: 112.5em;
+$screen2: 102.5em;
+$screen3: 93.75em;
+$screen4: 81.25em;
+$screen5: 75em;
+$screen6: 64em;
+$screen7: 48em;
+$screen8: 25.875em;
+$screen9: 23.4375em;
+
+@mixin screen1 {
+  @media (max-width: #{$screen1}) {
+    @content;
+  }
+}
+
+@mixin screen2 {
+  @media (max-width: #{$screen2}) {
+    @content;
+  }
+}
+
+@mixin screen3 {
+  @media (max-width: #{$screen3}) {
+    @content;
+  }
+}
+
+@mixin screen4 {
+  @media (max-width: #{$screen4}) {
+    @content;
+  }
+}
+
+@mixin screen5 {
+  @media (max-width: #{$screen5}) {
+    @content;
+  }
+}
+
+@mixin screen6 {
+  @media (max-width: #{$screen6}) {
+    @content;
+  }
+}
+
+@mixin screen7 {
+  @media (max-width: #{$screen7}) {
+    @content;
+  }
+}
+
+@mixin screen8 {
+  @media (max-width: #{$screen8}) {
+    @content;
+  }
+}
+
+@mixin screen9 {
+  @media (max-width: #{$screen9}) {
+    @content;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @include screen1() {
+    font-size: 55%;
+  }
+  @include screen3() {
+    font-size: 50%;
+  }
+  @include screen4() {
+    font-size: 45%;
+  }
+  @include screen5() {
+    font-size: 40%;
+  }
+  @include screen6() {
+    font-size: 60%;
+  }
+  @include screen7() {
+    font-size: 47.5%;
+  }
+  @include screen8() {
+    font-size: 30%;
+  }
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.home {
+  max-width: 1920px;
+  width: 100%;
+  height: 100vh;
+}
+.hero {
+  height: 100%;
+  width: 100%;
+}
+.background {
+  float: right;
+  height: 100%;
+  width: 60%;
+  overflow: hidden;
+
+  &_right {
+    height: 100%;
+    width: 100%;
+    background-color: $primary-color;
+    overflow: hidden;
+    position: relative;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    &_image {
+      position: absolute;
+      bottom: 0;
+      left: 15rem;
+      height: auto;
+      width: 110rem;
+
+      @include screen2() {
+        width: 90rem;
+      }
+
+      @include screen6() {
+        width: 100rem;
+        left: 0;
+      }
+    }
+  }
+}
+
+.home_content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-end;
+  padding-left: 10rem;
+  @include screen6() {
+    justify-content: center;
+  }
+  .home_content_heading {
+    font-size: 12rem;
+    font-family: "Open Sans";
+    font-weight: 700;
+    animation: text-appear 2 infinite;
+    @include screen6() {
+      margin-top: -10rem;
+      width: 80vw;
+      z-index: 200;
+    }
+
+    @include screen6() {
+      margin-top: -10rem;
+      width: 80vw;
+      z-index: 200;
+    }
+  }
+
+  &_message {
+    width: 130%;
+    font-family: "Bitter";
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 35%;
+    z-index: 5;
+    text-align: justify;
+    @include screen6() {
+      width: 170%;
+    }
+  }
+}
+
+.loader-transition-enter-active {
+  transition: all 0.5s ease;
+}
+.loader-transition-leave-active {
+  transition: all 0.5s ease;
+}
+.loader-transition-enter, .loader-transition-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.image-start-enter-active {
+  transition: all 1.5s ease;
+}
+.image-start-leave-active {
+  transition: all 1.5s ease;
+}
+.image-start-enter, .image-start-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(5rem);
+}
+
+.message-start-enter-active {
+  transition: all 1.5s ease;
+}
+.message-start-leave-active {
+  transition: all 1.5s ease;
+}
+.message-start-enter, .message-start-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-5rem);
+}
+
+.intro {
+  &_background {
+    float: right;
+    height: 100%;
+    width: 60%;
+    //overflow: hidden;
+
+    @include screen6() {
+      float: none;
+      width: 100%;
+      margin-top: -50rem;
+    }
+    
+    @include screen8() {
+      
+      margin-top: -51rem;
+    }
+    @include screen9() {
+      
+      margin-top: -56rem;
+    }
+    &_right {
+      height: 100%;
+      width: 100%;
+      background-color: $primary-color;
+      //overflow: hidden;
+      position: relative;
+      @include screen6() {
+        background-color: transparent;
+        &::after {
+          background-color: $primary-color;
+          clip-path: polygon(40% 0, 100% 0, 100% 100%, 44% 100%);
+          height: 100%;
+          width: 100%;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+      }
+      &_content {
+        padding: 10rem;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @include screen6() {
+          padding-top: 40rem;
+        }
+        &_text {
+          padding-top: 5rem;
+          font-size: 2.3rem;
+          font-family: "Bitter";
+          margin-bottom: 5rem;
+          @include screen6() {
+            padding-top: 10rem;
+
+            font-size: 2.5rem;
+          }
+          @include screen8() {
+            font-size: 3rem;
+          }
+          @include screen9() {
+      
+            padding-top: 12rem;
+
+          }
+        }
+        &_player {
+          width: 100%;
+          height: 30rem;
+          display: flex;
+          @include screen8() {
+            flex-direction: column;
+          }
+
+          &_spotify {
+            width: 45%;
+            @include screen8() {
+              margin-top: 3rem;
+              width: 100%;
+              height: 16rem;
+            }
+          }
+
+          &_text {
+            margin-top: 0;
+            padding-right: 5rem;
+            font-size: 4rem;
+            width: 50%;
+            @include screen8() {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.intro {
+  //height: 100%;
+  width: 100%;
+
+  &_link {
+    padding-left: 10rem;
+    height: 100%;
+    width: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    float: left;
+    z-index: 200;
+
+    @include screen6() {
+      float: none;
+      flex-direction: row;
+      height: 35vh;
+      width: 100%;
+      align-items: flex-end;
+      padding-bottom: 5rem;
+      justify-content: space-between;
+    }
+
+    @include screen8() {
+      height: 33vh;
+    }
+    &_about {
+      margin-top: 17rem;
+      margin-bottom: 7%;
+      font-size: 5rem;
+      position: relative;
+      z-index: 100;
+      @include screen6() {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 5rem 10rem;
+      }
+
+      &::after {
+        background-color: $primary-color;
+        height: 30%;
+        width: 120%;
+        content: "";
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
+    &_image {
+      width: 80%;
+      margin-bottom: 5%;
+      @include screen6() {
+        width: auto;
+        height: 60%;
+        margin-bottom: 0;
+        margin-right: 7rem;
+      }
+      @include screen9() {
+      
+        margin-right: 5rem;
+
+
+      }
+    }
+
+    &_link {
+      text-decoration: none;
+      font-size: 3rem;
+      font-weight: 700;
+      color: black;
+      position: relative;
+      z-index: 100;
+      transition: all 0.2s;
+      margin-bottom: 3%;
+
+      &::after {
+        background-color: $primary-color;
+        height: 30%;
+        width: 100%;
+        content: "";
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+        z-index: -1;
+      }
+      &:hover {
+        transform: translateX(2rem);
+      }
+
+      @include screen6() {
+        display: none;
+      }
+    }
+    &_social {
+      display: flex;
+      @include screen6() {
+        margin-right: 35%;
+
+        flex-direction: column;
+        height: 60%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      &_logo {
+        height: 6rem;
+        width: 6rem;
+        margin-right: 3rem;
+        transition: all 0.2s;
+        &:hover {
+          fill: $primary-color;
+        }
+
+        @include screen6() {
+          height: 8rem;
+          width: 8rem;
+          margin: 2rem;
+        }
+
+        @include screen8() {
+          height: 6rem;
+          width: 6rem;
+          margin: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.skill {
+  height: 100vh;
+  width: 100%;
+  
+  &_header {
+    margin-top: 20rem;
+    margin-bottom: 0rem;
+    font-size: 5rem;
+    position: relative;
+    z-index: 100;
+    display: inline-block;
+    margin-left: 10rem;
+    @include screen6() {
+      margin-top: 5rem;
+    }
+    &::after {
+      background-color: $primary-color;
+      height: 30%;
+      width: 120%;
+      content: "";
+      position: absolute;
+      bottom: 15%;
+      left: 0;
+      z-index: -1;
+    }
+  }
+  &_strong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+
+    &_logo {
+      height: 12rem;
+      width: 12rem;
+      margin: 0 2rem 1rem 2rem;
+      @include screen6() {
+        margin: 3rem;
+      }
+    }
+  }
+  &_familiar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    &_logo {
+      height: 10rem;
+      width: 10rem;
+      margin: 0 2rem 0 2rem;
+      @include screen6() {
+        margin: 3rem;
+      }
+    }
+  }
+}
+
+.part {
+  &_header {
+    font-size: 3rem;
+    font-family: "Open sans";
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 5rem;
+  }
+  &_logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    @include screen6() {
+      width: 50vw;
+    }
+    @include screen8() {
+      width: 70vw;
+    }
+  }
+}
+.logo {
+  &_1 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "JavaScript";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_2 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Illustrator";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_3 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "HTML";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_4 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "CSS";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_5 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "SCSS";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_6 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "VueJS";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_7 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Photoshop";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_8 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Java";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_9 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "C";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_10 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "NodeJS";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_11 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Python";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_12 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Postgesql";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_13 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "React";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_14 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "MongoDB";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &_15 {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      display: block;
+      content: "Linux";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s;
+      font-family: "Bitter";
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transform: translateY(-15%);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

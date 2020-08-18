@@ -17,34 +17,5 @@ export default {
 </script>
 
 <style lang="scss">
-.nav {
-  z-index: 100;
-  font-size: 2rem;
-  height: 5rem;
-  //max-width: 192rem;
-  max-width: 100%;
-  position: fixed;
-  font-family: "Open Sans";
-  margin-top: 5rem;
-  margin-left: 10rem;
-
-  &-bar {
-    height: 100%;
-    width: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-}
-
-.nav-logo {
-  height: 100%;
-  margin-right: 3rem;
-}
-
-.site-link {
-  margin: 3rem;
-  text-decoration: none;
-  color: black;
-}
+@import '../assets/sass/Navbar.scss';
 </style>
