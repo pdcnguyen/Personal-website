@@ -29,9 +29,8 @@ export default {
   box-sizing: inherit;
 }
 
-
-
 body {
+  font-family: "Lato", sans-serif;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -44,6 +43,5 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  
 }
 </style>

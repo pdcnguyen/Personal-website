@@ -8,6 +8,8 @@ $screen6: 64em;
 $screen7: 48em;
 $screen8: 25.875em;
 $screen9: 23.4375em;
+$screen10: 22.5em;
+$screen11: 20em;
 
 @mixin screen1 {
   @media (max-width: #{$screen1}) {
@@ -63,6 +65,18 @@ $screen9: 23.4375em;
   }
 }
 
+@mixin screen10 {
+  @media (max-width: #{$screen10}) {
+    @content;
+  }
+}
+
+@mixin screen11 {
+  @media (max-width: #{$screen11}) {
+    @content;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -85,7 +99,7 @@ html {
     font-size: 47.5%;
   }
   @include screen8() {
-    font-size: 30%;
+    font-size: 20%;
   }
 }
 
@@ -108,7 +122,14 @@ html {
   height: 100%;
   width: 60%;
   overflow: hidden;
+  @include screen6() {
+    width: 70%
 
+  }
+  @include screen9() {
+    width: 80%
+
+  }
   &_right {
     height: 100%;
     width: 100%;
@@ -131,6 +152,11 @@ html {
         width: 100rem;
         left: 0;
       }
+      @include screen11() {
+        left: 3rem;
+  
+    
+      }
     }
   }
 }
@@ -141,9 +167,7 @@ html {
   height: 100vh;
   justify-content: flex-end;
   padding-left: 10rem;
-  @include screen6() {
-    justify-content: center;
-  }
+  
   .home_content_heading {
     font-size: 12rem;
     font-family: "Open Sans";
@@ -160,18 +184,45 @@ html {
       width: 80vw;
       z-index: 200;
     }
+    @include screen11() {
+      font-size: 10rem;
+
+  
+    }
   }
 
   &_message {
     width: 130%;
-    font-family: "Bitter";
+    font-family: "Lato";
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 35%;
     z-index: 5;
     text-align: justify;
     @include screen6() {
-      width: 170%;
+      width: 200%;
+      margin-bottom: 50rem;
+
+    }
+    @include screen9() {
+    text-align: left;
+    width: 550%;
+      margin-bottom: 40rem;
+  
+    }
+    @include screen10() {
+      width: 600%;
+      margin-bottom: 40rem;
+    text-align: left;
+
+  
+    }
+    @include screen11() {
+      width: 900%;
+      margin-bottom: 30rem;
+    text-align: left;
+
+  
     }
   }
 }
@@ -242,7 +293,7 @@ html {
         background-color: transparent;
         &::after {
           background-color: $primary-color;
-          clip-path: polygon(40% 0, 100% 0, 100% 100%, 44% 100%);
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 44% 100%);
           height: 100%;
           width: 100%;
           content: "";
@@ -251,7 +302,15 @@ html {
           left: 0;
           z-index: -1;
         }
+        @include screen9() {
+          
+          &::after {
+            
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 44% 100%);
+            
+          }
       }
+    }
       &_content {
         padding: 10rem;
         height: 100%;
@@ -265,7 +324,7 @@ html {
         &_text {
           padding-top: 5rem;
           font-size: 2.3rem;
-          font-family: "Bitter";
+          font-family: "Lato";
           margin-bottom: 5rem;
           @include screen6() {
             padding-top: 10rem;
@@ -280,13 +339,18 @@ html {
             padding-top: 12rem;
 
           }
+          @include screen11() {
+            padding-top: 0;
+      
+        
+          }
         }
         &_player {
           width: 100%;
           height: 30rem;
           display: flex;
           @include screen8() {
-            flex-direction: column;
+            display: none;
           }
 
           &_spotify {
@@ -334,8 +398,6 @@ html {
       height: 35vh;
       width: 100%;
       align-items: flex-end;
-      padding-bottom: 5rem;
-      justify-content: space-between;
     }
 
     @include screen8() {
@@ -415,7 +477,6 @@ html {
       display: flex;
       @include screen6() {
         margin-right: 35%;
-
         flex-direction: column;
         height: 60%;
         justify-content: space-between;
@@ -427,7 +488,10 @@ html {
         margin-right: 3rem;
         transition: all 0.2s;
         &:hover {
-          fill: $primary-color;
+          height: 7rem;
+          width: 7rem;
+        margin-right: 4rem;
+
         }
 
         @include screen6() {
@@ -537,7 +601,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -561,7 +625,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -585,7 +649,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -609,7 +673,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -633,7 +697,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -657,7 +721,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -680,7 +744,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -703,7 +767,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -726,7 +790,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -749,7 +813,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -772,7 +836,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -795,7 +859,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -818,7 +882,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -841,7 +905,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
@@ -864,7 +928,7 @@ html {
       opacity: 0;
       z-index: -1;
       transition: all 0.2s;
-      font-family: "Bitter";
+      font-family: "Lato";
       font-size: 2rem;
       font-weight: 700;
     }
