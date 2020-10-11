@@ -6,7 +6,7 @@ $screen4: 81.25em;
 $screen5: 75em;
 $screen6: 64em;
 $screen7: 48em;
-$screen8: 25.875em;
+$screen8: 28em;
 $screen9: 23.4375em;
 $screen10: 22.5em;
 $screen11: 20em;
@@ -99,7 +99,10 @@ html {
     font-size: 47.5%;
   }
   @include screen8() {
-    font-size: 20%;
+    font-size: 40%;
+  }
+  @include screen11() {
+    font-size: 30%;
   }
 }
 
@@ -167,7 +170,9 @@ html {
   height: 100vh;
   justify-content: flex-end;
   padding-left: 10rem;
-  
+  @include screen6() {
+    padding: 5vw;
+  }
   .home_content_heading {
     font-size: 12rem;
     font-family: "Open Sans";
@@ -200,25 +205,30 @@ html {
     z-index: 5;
     text-align: justify;
     @include screen6() {
-      width: 200%;
-      margin-bottom: 50rem;
-
+      width: 80vw;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.603);
+    }
+    @include screen8() {
+      width: 80vw;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.603);
     }
     @include screen9() {
     text-align: left;
-    width: 550%;
-      margin-bottom: 40rem;
+    
+     
   
     }
     @include screen10() {
-      width: 600%;
-      margin-bottom: 40rem;
+      
+    
     text-align: left;
 
   
     }
     @include screen11() {
-      width: 900%;
+      
       margin-bottom: 30rem;
     text-align: left;
 
@@ -327,7 +337,7 @@ html {
           font-family: "Lato";
           margin-bottom: 5rem;
           @include screen6() {
-            padding-top: 10rem;
+            margin-top: -30rem;
 
             font-size: 2.5rem;
           }
@@ -340,7 +350,7 @@ html {
 
           }
           @include screen11() {
-            padding-top: 0;
+            padding-top: 5rem;
       
         
           }
@@ -349,7 +359,7 @@ html {
           width: 100%;
           height: 30rem;
           display: flex;
-          @include screen8() {
+          @include screen6() {
             display: none;
           }
 
@@ -432,10 +442,7 @@ html {
       width: 80%;
       margin-bottom: 5%;
       @include screen6() {
-        width: auto;
-        height: 60%;
-        margin-bottom: 0;
-        margin-right: 7rem;
+        display: none;
       }
       @include screen9() {
       
@@ -476,11 +483,7 @@ html {
     &_social {
       display: flex;
       @include screen6() {
-        margin-right: 35%;
-        flex-direction: column;
-        height: 60%;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: none;
       }
       &_logo {
         height: 6rem;
@@ -581,7 +584,7 @@ html {
     align-items: center;
     flex-wrap: wrap;
     @include screen6() {
-      width: 50vw;
+      width: 70vw;
     }
     @include screen8() {
       width: 70vw;
