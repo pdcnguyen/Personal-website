@@ -1,5 +1,7 @@
 # personal-website
 
+Visit project: pdcnguyen.site
+
 ## Project setup
 ```
 yarn install
